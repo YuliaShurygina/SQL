@@ -9,9 +9,9 @@ CREATE TABLE smart_phones (
   quantity INT NULL);
 -- Внесение изменений в таблицу --
 ALTER TABLE smart_phones
-CHANGE COLUMN phone_id phone_id INT NOT NULL AUTO_INCREMENT ;
-ALTER TABLE smart_phones
-CHANGE COLUMN `price` `price` DECIMAL NOT NULL ;
+MODIFY COLUMN 'phone_id' INT PRIMARY KEY NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE 'smart_phones' MODIFY COLUMN 'price' DECIMAL NOT NULL;
 -- Заполнение таблицы--
 INSERT INTO smart_phones (model, brand_name, price, quantity)
 VALUES 
@@ -39,6 +39,10 @@ WHERE quantity > 2;
 SELECT model
 FROM smart_phones
 WHERE brand_name = 'Samsung';
+-- Выведите все данные в таблице для  марок “Samsung” и "Apple" --
+SELECT *
+FROM smart_phones
+WHERE brand_name IN ('Samsung', 'Apple');
 -- Обновление информации (изменяем цену телефонов на 1000)
 UPDATE smart_phones
 SET price = price + 1000;
