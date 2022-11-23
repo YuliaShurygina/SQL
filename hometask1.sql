@@ -10,7 +10,7 @@ CREATE TABLE smart_phones (
 -- Внесение изменений в таблицу --
 ALTER TABLE smart_phones
 CHANGE COLUMN phone_id phone_id INT NOT NULL AUTO_INCREMENT ;
-ALTER TABLE `mobile_phones`.`smart_phones` 
+ALTER TABLE smart_phones
 CHANGE COLUMN `price` `price` DECIMAL NOT NULL ;
 -- Заполнение таблицы--
 INSERT INTO smart_phones (model, brand_name, price, quantity)
@@ -39,3 +39,6 @@ WHERE quantity > 2;
 SELECT model
 FROM smart_phones
 WHERE brand_name = 'Samsung';
+-- Обновление информации (изменяем цену телефонов на 1000)
+UPDATE smart_phones
+SET price = price + 1000;
