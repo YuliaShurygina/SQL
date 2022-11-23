@@ -1,17 +1,16 @@
--- Создание схемы --
-CREATE SCHEMA 'mobile_phones';
+-- Создание базы данных --
+CREATE DATABASE mobile_phones;
 -- Создание таблицы --
-CREATE TABLE `mobile_phones`.`smart_phones` (
-  `phone_id` INT NOT NULL,
-  `model` VARCHAR(100) NOT NULL,
-  `brand_name` VARCHAR(45) NOT NULL,
-  `price` DECIMAL(5, 2) NOT NULL,
-  `quantity` INT NULL,
-  PRIMARY KEY ('phone_id'),
-  UNIQUE INDEX `model_UNIQUE` (`model` ASC) VISIBLE);
+CREATE TABLE smart_phones (
+  phone_id INT NOT NULL,
+  model VARCHAR(100) NOT NULL,
+  brand_name VARCHAR(45) NOT NULL UNIQUE,
+  price DECIMAL(5, 2) NOT NULL,
+  quantity INT NULL,
+  PRIMARY KEY (phone_id));
 -- Внесение изменений в таблицу --
-ALTER TABLE `mobile_phones`.`smart_phones` 
-CHANGE COLUMN `phone_id` `phone_id` INT NOT NULL AUTO_INCREMENT ;
+ALTER TABLE smart_phones
+CHANGE COLUMN phone_id phone_id INT NOT NULL AUTO_INCREMENT ;
 ALTER TABLE `mobile_phones`.`smart_phones` 
 CHANGE COLUMN `price` `price` DECIMAL NOT NULL ;
 -- Заполнение таблицы--
