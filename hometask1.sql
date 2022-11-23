@@ -8,8 +8,9 @@ CREATE TABLE smart_phones (
   price DECIMAL(5, 2) NOT NULL,
   quantity INT NULL);
 -- Внесение изменений в таблицу --
-
+-- добавление автоинкремента
 ALTER TABLE smart_phones MODIFY phone_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL;
+-- изменение типа данных 
 ALTER TABLE smart_phones ALTER COLUMN price DECIMAL NOT NULL;
 
 
