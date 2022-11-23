@@ -8,10 +8,11 @@ CREATE TABLE smart_phones (
   price DECIMAL(5, 2) NOT NULL,
   quantity INT NULL);
 -- Внесение изменений в таблицу --
-ALTER TABLE smart_phones
-MODIFY COLUMN 'phone_id' INT PRIMARY KEY NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE 'smart_phones' MODIFY COLUMN 'price' DECIMAL NOT NULL;
+ALTER TABLE smart_phones MODIFY phone_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL;
+ALTER TABLE smart_phones ALTER COLUMN price DECIMAL NOT NULL;
+
+
 -- Заполнение таблицы--
 INSERT INTO smart_phones (model, brand_name, price, quantity)
 VALUES 
